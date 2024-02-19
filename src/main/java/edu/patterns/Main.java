@@ -1,5 +1,6 @@
 package edu.patterns;
 
+import edu.patterns.Creational.Builder.Order;
 import edu.patterns.Creational.Prototype.Reservation;
 import edu.patterns.Creational.Singelton.Performance;
 
@@ -16,6 +17,15 @@ public class Main {
         Reservation anotherReservation = (Reservation) reservation.doClone();
         System.out.println(reservation);
         System.out.println(anotherReservation);
+        System.out.println();
 
+        System.out.println("-----Builder:");
+        Order order = new Order.OrderBuilder()
+                .setBreakfast("French Toasts")
+                .setSandwich("Falafel")
+                .setDessert("Classic Vanilla Cheesecake")
+                .setDrink("Latte")
+                .build();
+        System.out.println(order.toString());
     }
 }
